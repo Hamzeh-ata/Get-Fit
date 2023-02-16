@@ -1,0 +1,83 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<section class="main-section">
+    <div class="container-fluid ">
+        <div class="row">
+          <div  class="progress-bar">
+         <div class="progress-bar-fill" style="width: 100% ; " ></div>
+   </div>
+    </div>
+      <div class="container h-100">
+        <div class="row RC1 justify-content-center h-100 ">
+           
+             <div class="col-lg-7 col-sm-12 col-md-12 justify-content-center align-self-center">
+                 <div class="main text-center">
+                     <h1>We got all the information we need from you</h1>
+                     <h2>you can now have your own schedule</h2>
+                     <div class="getSchedule">
+                           <a asp-action="getValues">Get schedule</a>
+                     </div>
+                   
+                 </div>
+                  </div>
+             </div>
+              </div>
+          </div>
+      </section>
+
+      <style>
+          
+          html , body{
+            min-height: 100vh;
+
+
+          }
+   .main-section{
+          background-color:#212020;
+           height:100%;
+          min-height: 100vh;
+
+    }
+   .progress-bar {
+    height: 3px;
+    width: 100%;
+    background-color: #505050;
+    margin: 20px;
+}
+.main{
+    margin-top:60px;
+}
+.progress-bar-fill {
+    background: #C54545;
+    width: 1000%;
+    height: 3px;
+}
+.main h1 {
+    color:white;
+    font-size:30px;
+    margin-top:20px;
+}
+.main h2{
+  color:#b9b6b6;
+    font-size:25px;
+        margin-top:30px;
+
+}
+.getSchedule a{
+    
+    background-color: #C54545;
+    padding:10px;
+    width:150px;
+    color:white !important;
+    display:block;
+}
+.getSchedule{
+    display:flex;
+    justify-content:center;
+    margin-top:30px;
+    cursor:pointer;
+}
+      </style>

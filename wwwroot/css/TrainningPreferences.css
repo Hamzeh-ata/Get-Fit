@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+body{
+    margin:0px;
+}
+.main-section {
+    background-image: url(../imgs/SectionOne.png);
+    min-height: 100vh;
+}
+
+.main-text{
+    color:white;
+    text-align-last:center;
+    margin:40px 0px 20px 0px;
+    padding:20px;
+
+}
+.progress-bar {
+    height: 3px;
+    width: 100%;
+    background-color: #505050;
+    margin: 20px;
+}
+
+.progress-bar-fill {
+    background: #C54545;
+    width: 1000%;
+    height: 3px;
+}
+.DaysSelect select, .hoursSelect select {
+    background: #252525;
+    border: 1px solid #504D4D;
+    padding: 10px;
+    width: 100%;
+    color: #ddd0d0;
+}
+    .DaysSelect select:focus, .hoursSelect select:focus {
+        border: 1px solid #C54545 !important;
+        outline: none !important;
+    }
+.submitForm{
+    margin-top:50px;
+}
+.submitForm button {
+        background: #C54545;
+        padding: 8px;
+        width: 180px;
+        border: 0px;
+        color: #ddd0d0;
+        cursor:pointer;
+        margin-bottom:10px;
+    }
+    .submitForm button:focus{
+        outline:none !important;
+        border : none !important;
+    }

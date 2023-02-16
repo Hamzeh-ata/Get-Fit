@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+body{
+    margin:0px;
+}
+.mainSection {
+    background-image: url(../imgs/SectionOne.png);
+    padding: 16px;
+    min-height: 100%;
+    width:100%;
+}
+html, body {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+}
+aside {
+    min-height: 100%;
+    background-color: #171717;
+    float: left;
+    width: 100%;
+    padding: 10px;
+    border-right: 1px solid #504D4D;
+   
+}
+.userName, .userEmail {
+    width: 100%;
+    margin-top:15px;
+}
+.userName h1 {
+    color: white;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+}
+.userEmail h1 {
+    color: #897f7f;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 14px;
+}
+.menuBar h1 {
+    color: #E8DCDC;
+    margin-top: 100px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    margin-bottom:40px;
+}
+
+.asideField {
+    border-top: 1px solid rgba(80, 77, 77, 0.27);
+    border-bottom: 1px solid rgba(80, 77, 77, 0.27);
+    padding: 15px;
+  
+}
+    .asideField h1 {
+        color: #c9c1c1;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 15px;
+    }
+.accountMangement:hover, .personalInformation:hover, .workoutGoal:hover, .WorkoutPlace:hover, .workoutPreferences:hover {
+    background-color: #212020 !important;
+    cursor: pointer;
+    width: 100%;
+    display: block;
+}
+.accountMangement:focus, .personalInformation:hover, .workoutGoal:hover, .WorkoutPlace:hover, .workoutPreferences:hover {
+    background-color: #212020 !important;
+    cursor: pointer;
+    width: 100%;
+    display: block;
+}
+
+.mainText{
+    color:white;
+    margin-top:50px;
+    margin-left:40px;
+    margin-bottom:20px;
+}
+.mainText h1 {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px;
+ }
+a{
+    text-decoration:none!important;
+}
+
+.userInfo{
+    display:flex;
+}
+.firstName, .lastName, .email, .Password {
+    margin: 10px 15px;
+    padding: 10px;
+    width: 100%;
+}
+    .firstName h1, .lastName h1, .email h1, .Password h1 {
+        color: white;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 25px;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+    .firstName input, .lastName input, .email input, .Password  input{
+        background: #303030;
+        border: 1px solid #504D4D;
+        border-radius: 9px;
+        padding: 8px;
+        width: 100%;
+    }
+input:focus {
+    border-color: #C54545 !important;
+    outline:none !important;
+}
+.saveButton button {
+    background: #C54545;
+    border-radius: 8px;
+    width: 180px;
+    padding:8px;
+    border:0px !important;
+    cursor:pointer;
+    margin-top:20px;
+    color:white;
+}
+.saveButton button:focus{
+    outline:none !important;
+    border:none !important;
+}
+.container-fluid{
+    min-height:100vh;
+}
+input{
+    color:white;
+}
+.changebirthDayInput, .changeHeightInput, .changeWeightInput {
+    margin-top: 30px;
+}
+    .changebirthDayInput h1, .changeHeightInput h1, .changeWeightInput h1 {
+        font-size: 17px;
+        color: #cfcbcb;
+    }
+    .changebirthDayInput input, .changeHeightInput input, .changeWeightInput input {
+        background: #252525;
+        border: 1px solid #504D4D;
+        padding: 5px;
+        width: 100%;
+        color: white;
+        height: 44px;
+        font-size: 20px;
+        letter-spacing: 3px;
+        margin-top: 20px;
+    }
+.selectField{
+    margin-top:30px;
+}
+.selectField select {
+    background: #252525;
+    border: 1px solid #504D4D;
+    padding: 10px;
+    width: 100%;
+    color: #ddd0d0;
+}
+
+    .selectField select:focus {
+        border: 1px solid #C54545 !important;
+        outline: none !important;
+    }
+   

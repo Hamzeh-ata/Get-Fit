@@ -1,0 +1,76 @@
+﻿@page
+@model RegisterModel
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/signUp.css" asp-append-version="true" />
+</head>
+<section class="container register-section">
+  <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+   <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-sm-12" >
+       <div class="img">
+           <img src="/imgs/signupmodel.jpg" />
+       </div>
+       </div>
+       <div class="col-lg-6 col-sm-12">
+         <div class="Register-form">
+           <div class="register-wrap">
+            <div class="form-floating">
+                <h3>First name</h3>
+                <div class="d-flex justify-content-center">
+                   <input asp-for="Input.FirstName" class="form-input" autocomplete="firstname" aria-required="true" />
+                  </div>
+              </div>
+              <div class="form-floating">
+                <h3>Last name</h3>
+                <div class="d-flex justify-content-center">
+                   <input asp-for="Input.LastName" class="form-input" autocomplete="lastname" aria-required="true" />
+                  </div>
+              </div>
+             <div class="form-floating">
+                <h3>Email</h3>
+                <div class="d-flex justify-content-center">
+                   <input asp-for="Input.Email" class="form-input" autocomplete="username" aria-required="true" />
+                  </div>
+              </div>
+              <div class="form-floating">
+                <h3>Password</h3>
+                 <div class="d-flex justify-content-center">
+                <input asp-for="Input.Password" class="form-input" autocomplete="new-password" aria-required="true" />
+              </div>
+              </div>
+              <div class="form-floating">
+                <h3>Confirm Password</h3>
+                <div class="d-flex justify-content-center">
+                <input asp-for="Input.ConfirmPassword" class="form-input" autocomplete="new-password" aria-required="true" />
+              </div>
+              </div>
+               <div class="d-flex justify-content-center">
+              <button id="registerSubmit" type="submit" class="register-button">Register</button>
+              </div>
+              <div class="warnnings">
+                <div class="email-danger">
+                 <span asp-validation-for="Input.Email" class="text-danger"></span>
+                 </div>
+                 <div class="email-danger">
+                 <span asp-validation-for="Input.Password" class="text-danger"></span>
+                 </div>
+                 <div class="email-danger">
+                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                 </div>
+                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+             </div>
+                 </div>
+           </div>
+       </div>
+    </div>
+      </div>
+     </form>
+</section>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

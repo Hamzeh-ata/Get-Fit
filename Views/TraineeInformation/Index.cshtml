@@ -1,0 +1,92 @@
+﻿@model get_fit.Models.Trainee_information
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/personalInfo.css" asp-append-version="true" />
+</head>
+ <div class="container-fluid h-100 ">
+       <div class="row ">
+   <div  class="progress-bar">
+   <div class="progress-bar-fill" ></div>
+</div>
+</div>
+ <div class="container C2">
+        <div class="row R1C2">
+            <div class="col-sm-12 col-md-6 col-lg-6 col align-self-center ">
+      <form method="post" >
+           <div class="main">
+        <div >
+          <div class="mt-4">
+        <h1 class="inputfield-title">What's your Birthday</h1>
+      <div class="input-field" id="input-field">
+      <svg  id="warning-icon-birthday" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-alert-circle" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#C54545" fill="none" stroke-linecap="round" stroke-linejoin="round">
+       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+       <circle cx="12" cy="12" r="9" />
+       <line x1="12" y1="8" x2="12" y2="12" />
+       <line x1="12" y1="16" x2="12.01" y2="16" />
+       </svg>
+        <input autocomplete="off" asp-for="BirthDay"  maxlength="10" type="text" id="birthday" placeholder="DD-MM-YYYY"  />
+
+
+        </div>
+           <span class="warning" id="warning-birthday"  > Our program is not Appropriate for your age</span>
+
+     </div>
+   <div class="mt-4" >
+      <div >
+        <h1 class="inputfield-title">What's your height</h1>
+       </div>
+       <div class="units">
+           <h2>Units</h2>
+           <div class="options">
+            <button id="ft_in">ft.In</button>
+            <button id="cm">cm</button>
+           </div>
+       </div>
+      <div class="input-field" >
+  <svg class="warning-icon" id="warning-icon-height" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-alert-circle" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#C54545" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+   <circle cx="12" cy="12" r="9" />
+   <line x1="12" y1="8" x2="12" y2="12" />
+   <line x1="12" y1="16" x2="12.01" y2="16" />
+   </svg>
+        <input autocomplete="off" asp-for="Height"  id="heightInput" placeholder="__ft" maxlength="3"  />
+        </div>
+        <span class="warning" id="warning-height"  >Erorr in Height input</span>
+     </div>
+   <div class="mt-4">
+      <div>
+        <h1 class="inputfield-title">What's your Weight</h1>
+       </div>
+        <div class="units">
+           <h2>Units</h2>
+            <div class="options">
+             <button id="lb">lb</button>
+             <button id="kg">kg</button>
+           </div>
+       </div>
+      <div class="input-field" >
+              <svg id="warning-icon-weight" class="warning-icon" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-alert-circle" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#C54545" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <circle cx="12" cy="12" r="9" />
+              <line x1="12" y1="8" x2="12" y2="12" />
+             <line x1="12" y1="16" x2="12.01" y2="16" />
+             </svg>
+          <input autocomplete="off" asp-for="Weight"  id="weightInput" placeholder="__lb" />
+        </div>
+        <span class="warning" id="warning-weight"   >Erorr in Weight input</span>
+     </div>
+         <input type="submit" id="submit" class="submit-button">
+            </div>
+            </div>
+                    </form>
+            </div>
+    </div>
+     </div>
+       </div> </div>
+     @section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="./js/personal_info.js" ></script>
+}
+

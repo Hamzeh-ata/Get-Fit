@@ -1,0 +1,104 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using get_fit.Areas.Identity.Data
+@model get_fit.Models.mainModel
+@inject UserManager<ApplicationUser> UserManager
+@{
+    Layout = "~/Views/AccountManagement/AccountManagement.cshtml";
+}
+<div class="mainSection">
+    <div class="container-fluid">
+        <div class="row"> 
+           <div class="mainText">
+        <h1>Accounnt management</h1>
+       </div> </div>
+          <form method="post" autocomplete="off">
+       <div class="row">
+           <div class="col-lg-3 col-md-6 col-sm-6">
+               <div class="firstName">
+            <h1>First name</h1>
+            <input autocomplete="off" asp-for="userNameChangeModel.firstName" placeholder="@UserManager.GetUserAsync(User).Result.FirstName"/>
+        </div>
+           </div>
+           <div class="col-lg-3 col-md-6 col-sm-6">
+               <div class="lastName">
+            <h1>Last name</h1>
+            <input autocomplete="off" asp-for="userNameChangeModel.lastName" placeholder="@UserManager.GetUserAsync(User).Result.LastName" />
+        </div>
+           </div>
+       </div>
+       <div class="row">
+           <div class="col-lg-6 col-md-12 col-sm-12">
+               <div class="saveButton d-flex justify-content-end">
+                   <button asp-action="ChangeName">Save</button>
+               </div>
+           </div>
+       </div>
+   <div class="row">
+           <div class="col-lg-3 col-md-6 col-sm-6">
+               <div class="email">
+            <h1>Email</h1>
+            <input autocomplete="off" placeholder="@UserManager.GetUserAsync(User).Result.Email " asp-for="changeEmailModel.newEmail" />
+        </div>
+           </div>
+       </div>
+          <div class="row">
+           <div class="col-lg-6 col-md-12 col-sm-12">
+               <div class="saveButton d-flex justify-content-end">
+                   <button asp-action="ChangeEmail">Save</button>
+               </div>
+           </div>
+       </div>
+         <div class="row">
+           <div class="col-lg-3 col-md-6 col-sm-6">
+               <div class="Password">
+            <h1>Current password</h1>
+            <input  autocomplete="off" asp-for="changePassword.currentPassword" />
+        </div>
+        <div class="Password">
+            <h1>New password</h1>
+            <input autocomplete="off"  asp-for="changePassword.newPassword" />
+         </div>
+           </div>
+       </div>
+          <div class="row">
+           <div class="col-lg-6 col-md-12 col-sm-12">
+               <div class="saveButton d-flex justify-content-end">
+                   <button asp-action="ChangePassword">Save</button>
+               </div>
+           </div>
+       </div>
+             </form>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

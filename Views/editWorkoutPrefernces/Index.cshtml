@@ -1,0 +1,86 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using get_fit.Areas.Identity.Data
+@model get_fit.Models.mainModel
+@inject UserManager<ApplicationUser> UserManager
+@{
+    Layout = "~/Views/AccountManagement/AccountManagement.cshtml";
+}
+<div class="mainSection">
+    <div class="container-fluid">
+        <div class="row"> 
+              <div class="mainText">
+        <h1>Workout Preferences</h1>
+        </div>
+            </div>
+             <form method="post">
+       <div class="row">
+           <div class="col-lg-3 col-md-6 col-sm-6">
+                   <div class="changebirthDayInput">
+            <h1>Change workout goal</h1>
+               <div class="selectField w-100 d-flex justify-content-center">
+                           <select asp-for="editPrefernces.goal" name="goalSelect">
+                            <option>@TempData["goalValue"] selected before</option>
+                            <option>Bulking</option>
+                            <option>Cutting</option>
+                            <option>Lose weight</option>
+                        </select>
+                        </div>
+        </div>
+      
+               </div>
+                   </div>
+          <div class="row">
+           <div class="col-lg-5 col-md-12 col-sm-12">
+               <div class="saveButton d-flex justify-content-end">
+                   <button  asp-action="changeGoal" >Save</button>
+               </div>
+           </div>
+       </div>
+       <div class="row">
+           <div class="col-lg-3 col-md-6 col-sm-6">
+                   <div class="changebirthDayInput">
+            <h1>Change workout hours</h1>
+               <div class="selectField w-100 d-flex justify-content-center">
+                           <select asp-for="editPrefernces.workoutHours" name="workoutHours">
+                            <option>@TempData["workoutHoursValue"] selected before</option>
+                            <option>One hour</option>
+                            <option>Two hours</option>
+                            <option>More than two hours</option>
+                        </select>
+                        </div>
+        </div>
+      
+               </div>
+                   </div>
+          <div class="row">
+           <div class="col-lg-5 col-md-12 col-sm-12">
+               <div class="saveButton d-flex justify-content-end">
+                   <button  asp-action="changeHours" >Save</button>
+               </div>
+           </div>
+       </div>
+           <div class="row">
+           <div class="col-lg-3 col-md-6 col-sm-6">
+                   <div class="changebirthDayInput">
+            <h1>Change workout Days</h1>
+               <div class="selectField w-100 d-flex justify-content-center">
+                           <select asp-for="editPrefernces.workoutDays" name="workoutDays">
+                            <option>@TempData["workoutDaysValue"] selected before</option>
+                            <option>Three days or less per week</option>
+                            <option>More than three days per week</option>
+                        </select>
+                        </div>
+        </div>
+      
+               </div>
+                   </div>
+          <div class="row">
+           <div class="col-lg-5 col-md-12 col-sm-12">
+               <div class="saveButton d-flex justify-content-end">
+                   <button  asp-action="changeDays" >Save</button>
+               </div>
+           </div>
+       </div>
+                       </form>
+                         </div>
+                   </div>

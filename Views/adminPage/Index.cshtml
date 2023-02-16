@@ -1,0 +1,24 @@
+﻿@model get_fit.Models.workoutDeatils
+
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<form method="post">
+
+    <h1>workoutId</h1>
+    <input asp-for="workoutId" />
+        <h1>bodyPart</h1>
+    <input asp-for="bodyPart" />
+            <h1>exerciseName</h1>
+    <input asp-for="exerciseName" />
+       <h1>reps</h1>
+    <input asp-for="reps" />
+           <h1>sets</h1>
+    <input asp-for="sets" />
+                   <h1>videoLink</h1>
+    <input asp-for="videoLink" />
+    <button asp-action="submit" type="submit">submit</button>
+</form>

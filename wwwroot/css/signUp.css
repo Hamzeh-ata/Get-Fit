@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+    margin: 0px;
+    background-color: #212020;
+}
+body, html {
+    height: 100%;
+}
+.register-section {
+    height: 100%;
+    display: flex;
+    align-content: center;
+}
+    .register-section form {
+        background-color: #111112;
+        width: 100%;
+        margin: auto;
+        padding: 50px 70px;
+        padding-bottom: 0px;
+        border-radius: 30px;
+        filter: drop-shadow(0px 8px 5px #000000);
+        -webkit-filter: drop-shadow(0px 8px 5px #000000);
+        -moz-filter: drop-shadow(0px 8px 5px #000000);
+        border: 1px solid #9b9a9a;
+    }
+.form-floating{
+    padding:10px;
+}
+.form-floating h3 {
+    color: #FFFFFF;
+    font-size: 19px;
+    text-align:center;
+    margin-bottom:15px;
+}
+.form-input {
+    background: #1A1A1B;
+    border: 1px solid #C6CECE;
+    border-radius: 9px;
+    width: 240px;
+    padding: 5px;
+    color: white;
+    margin-top: 5px;
+}
+.register-button {
+    background-color: #C54545;
+    padding: 5px;
+    width: 300px;
+    border-radius: 9px;
+    margin-top:15px;
+    color:white;
+}
+.warnnings span{
+    display:flex;
+    justify-content:center;
+    margin-top:4px;
+}
+.img, .img img{
+    width:330px;
+    bottom:0px;
+    position:absolute;
+}
+.Register-form{
+    display:flex;
+    height:100%;
+    
+    margin-bottom:40px;
+}
+.register-wrap{
+    align-self:center;
+}
+@media screen and (max-width: 1020px) {
+    .img img{
+        display:none;
+    }
+    .Register-form {
+        justify-content: center;
+    }
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: whitesmoke;
+    -webkit-box-shadow: 0 0 0px 1000px #1A1A1B inset;
+}

@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+body{
+    margin:0px;
+}
+.main-section {
+    background-image: url(../imgs/SectionOne.png);
+    min-height: 100vh;
+}
+
+.C1, .RC1,body,html {
+ 
+}
+.gymWokrkoutButton, .homeWokrkoutButton {
+    width: 100%;
+    padding: 0;
+    border: none;
+    margin-bottom: 20px;
+}
+.workoutPlaceCard {
+    background: #252525;
+    border: 1px solid #504D4D;
+    padding: 20px;
+    width: 100%;
+    color: white;
+    text-align: left;
+    font-size: 30px;
+    height: 220px;
+    cursor: pointer;
+   
+}
+.workoutPlaceCard:hover {
+     border: 1px solid #C54545;
+}
+.gymWokrkout {
+    background-image: url(../imgs/gymWorkout.png);
+    background-position: center;
+    text-align: center;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.homeWokrkout {
+    background-image: url(../imgs/homeWorkout.png);
+    background-position: center;
+    text-align: center;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+@media screen and (max-width: 1040px) {
+    .CR2 {
+        display: none;
+    }
+
+}
+.main-text{
+    color:white;
+    text-align-last:center;
+    margin-bottom:70px;
+    padding:20px;
+
+}
+.progress-bar {
+    height: 3px;
+    width: 100%;
+    background-color: #505050;
+    margin: 20px;
+}
+
+.progress-bar-fill {
+    background: #C54545;
+    width: 50%;
+    height: 3px;
+}
+.homeWokrkoutButton:focus, .gymWokrkoutButton:focus {
+    outline: none !important;
+    border: none !important;
+}

@@ -1,0 +1,314 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using get_fit.Areas.Identity.Data
+@inject SignInManager<ApplicationUser> SignInManager
+@model IEnumerable<get_fit.Models.workoutSummaryModel>
+@inject UserManager<ApplicationUser> UserManager
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="ul-navBar">
+                <li>
+                    <partial name="_LoginPartial" />
+                </li>
+                <li>
+                    <a href="#calorieCalc-section">Caloire calculator</a>
+                </li>
+                <li>
+                    <a>
+                        Home
+                    </a>
+                </li>
+                <li class="logo ">
+                    <img src="./imgs/LOGO.png" />
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="main-section">
+        <div class="container C1">
+            <div class="row">
+                <div class="col-lg-6 col-md-5 col-sm-12">
+                    <div class="text-wrap">
+                        <div class="mainSection-text">
+                            <h1>Make your body looks <span>perfect</span></h1>
+                            <p>Through our training schedules that help you achieve your goal whatever it is </p>
+                            <div class="getStarted">
+
+                                @if (@TempData["goalValue"] != null)
+                                {
+                                    <a asp-controller="schedule" asp-action="Index">Schedule</a>
+                                }
+
+                                else
+                                {
+                                    <a href="/Identity/Account/Login">Get started</a>
+
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-5 col-sm-12">
+                    <div class="mainSection-img">
+                        <img src="~/imgs/model.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="trainingPrograms-section">
+        <div class="container">
+            <div class="row">
+                <div class="section-title">
+                    <h1>Our training <span>programs </span></h1>
+                </div>
+            </div>
+            <div class="row S2C1R1">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <img src="~/imgs/Bulking-icon.png" />
+                        </div>
+                        <div class="programg-title">
+                            <h1>Bulking</h1>
+                        </div>
+                        <div class="program-desc">
+                            <h2>Eat More Calories</h2>
+                            <h2>Eat Enough Protein</h2>
+                            <h2>Train More Frequently</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <img src="~/imgs/Weight-icon.png" />
+                        </div>
+                        <div class="programg-title">
+                            <h1>Weight loss</h1>
+                        </div>
+                        <div class="program-desc">
+                            <h2>Drink More Water</h2>
+                            <h2>Pump Up Your Protein</h2>
+                            <h2>Stand Up and Move More</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <img src="~/imgs/Cutting-icon.png" />
+                        </div>
+                        <div class="programg-title">
+                            <h1>Cutting</h1>
+                        </div>
+                        <div class="program-desc">
+                            <h2>weight loss</h2>
+                            <h2>Calorie deficit</h2>
+                            <h2>Strength training cardio</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="calorieCalc-section" id="calorieCalc-section">
+        <div class="container">
+            <div class="row">
+                <div class="page-title">
+                    <h1>Calculate <span>calorie</span></h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12 S1R2C1">
+                    <div class="calculater-sec">
+                        <form id="formSec">
+                            <label class="inputField">
+                                <h1>Age</h1>
+                                <input autocomplete="off" id="age" type="number" required class="input" />
+                            </label>
+                            <label class="inputField">
+                                <h1>Higeht</h1>
+                                <input autocomplete="off" id="Higeht"
+                                       type="number"
+                                       required
+                                       placeholder="cm"
+                                       class="input" />
+                            </label>
+                            <label class="inputField">
+                                <h1>Weight</h1>
+                                <input autocomplete="off"
+                                       id="Weight"
+                                       type="number"
+                                       required
+                                       placeholder="Kg"
+                                       class="input" />
+                            </label>
+                            <label class="inputField">
+                                <h1>Activity</h1>
+                                <select id="activiy" class="activiy-select" required>
+                                    <option value="0"></option>
+                                    <option value="1">Sedentary (little or no exercise)</option>
+                                    <option value="2">Lightly active (exercise 1–3 days/week)</option>
+                                    <option value="3">Moderately active (exercise 3–5 days/week)</option>
+                                    <option value="4">Active (exercise 6–7 days/week)</option>
+                                    <option value="5">Very active (hard exercise 6–7 days/week)</option>
+                                </select>
+                            </label>
+                            <label class="gender-chk">
+                                <h1>Gender</h1>
+                                <span>Male</span>
+                                <input autocomplete="off" type="radio" id="Male" name="Gender" required class="Gender" value="1" />
+                                <span>Female</span><input autocomplete="off" type="radio" id="Female" name="Gender" required class="Gender" value="2" />
+                            </label>
+                            <div class="submit-clear">
+                                <input id="submit-form" class="submit-form" type="button" value="Calulate" />
+                                <input id="rest-form" class="rest-from" type="reset" value="Rest" />
+                            </div>
+                            <div class="calorie-text">
+                                <h2 id="calorie-text">
+                                    Your estimated daily calorie needs
+                                </h2>
+                            </div>
+                            <div id="text" class="result">
+                                <h1 id="result-text">0</h1>
+                            </div>
+                            <div id="warning-text" class="warning-text">
+                                <h2 id="war1">*Please add an age</h2>
+                                <h2 id="war2">*Please add an higeht</h2>
+                                <h2 id="war3">*Please add an weight</h2>
+                                <h2 id="war4">*Please add an activity</h2>
+                                <h2 id="war5">*Please add an gender</h2>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 S1R2C1">
+                    <div class="cal-img">
+                        <img src="/imgs/calcImg.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="programsBasedOn-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="sec3-title">
+                        <h1>Our <span>programs</span> based on </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row S4R2">
+                <div class="col-lg-4 col-sm-12 col-md-6">
+                    <div class="level">
+                        <div class="levelName">
+                            <h3>Your weak points</h3>
+                        </div>
+                        <div class="levelNumber">
+                            <h1>1</h1>
+                        </div>
+                        <div class="levelIcon">
+                            <img src="/imgs/weak.png" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-12 col-md-6 ">
+                    <div class="level">
+                        <div class="levelName">
+                            <h3>Your exercise days</h3>
+                        </div>
+                        <div class="levelNumber1">
+                            <h1>2</h1>
+                        </div>
+                        <div class="levelIcon">
+                            <img src="/imgs/day.png" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-12 col-md-6">
+                    <div class="level">
+                        <div class="levelName">
+                            <h3>Your favorite foods</h3>
+                        </div>
+                        <div class="levelNumber">
+                            <h1>3</h1>
+                        </div>
+                        <div class="levelIcon">
+                            <img src="/imgs/eat.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <div class="container-fluid">
+            <div class="row justify-content-center ">
+                <div class="col-lg-2 col-md-12 col-sm-12 align-self-center justify-content-center">
+                    <div class="contact d-flex justify-content-center">
+                        <div class="wrap">
+                            <div class="img d-flex justify-content-center">
+                                <img src="~/imgs/phoneIcon.png" />
+                            </div>
+                            <div class="text text-center">
+                                <span>0798354093</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-12 col-sm-12 align-self-center justify-content-center">
+                    <div class="contact d-flex justify-content-center">
+                        <div class="wrap">
+                            <div class="img d-flex justify-content-center ">
+                                <img src="~/imgs/emailIcon.png" />
+                            </div>
+                            <div class="text text-center">
+                                <span>hamzehiyi@outlook.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2  col-md-12 col-sm-12 align-self-center justify-content-center">
+                    <div class="contact d-flex justify-content-center">
+                        <div class="wrap">
+                            <div class="img d-flex justify-content-center">
+                                <img src="~/imgs/locationIcon.png" />
+                            </div>
+                            <div class="text text-center">
+                                <span>Amman Jordan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bar"> </div>
+            <div class="row justify-content-center">
+                <div class="col-3 justify-content-center">
+                    <div class="fathImg w-100 d-flex justify-content-center">
+                        <img src="./imgs/fath_splash.png" />
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="./js/home.js"></script>
+}   
+    </html>

@@ -1,0 +1,473 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+body{
+    margin:0px;
+}
+.main-section
+{
+    background-image:url(../imgs/SectionOne.png);
+    padding-top:50px;
+ 
+}
+html, body {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+}
+.mainSection-img{
+    display:flex;
+    justify-content:center;
+    align-content:center;
+    margin-top:5px;
+}
+.mainSection-img img {
+    width: 350px;
+}
+.mainSection-text h1 {
+    font-size: 55px;
+    color: white;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+}
+.mainSection-text h1 span {
+        color: #C54545;
+}
+.mainSection-text p {
+    font-size: 25px;
+    color: #B0B0B0;
+    text-align: center;
+    font-family: 'Arimo', sans-serif;
+}
+.text-wrap{
+    display:flex;
+    align-content:center;
+    height:100%;
+}
+.mainSection-text{
+    align-self:center;
+}
+a{
+    text-decoration:none !important;
+}
+.getStarted{
+    display:flex;
+    justify-content:center;
+}
+.getStarted a {
+    border-radius: 13px;
+    color: white !important;
+    padding: 10px;
+    background-color: #C54545 !important;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    width:150px;
+}
+.trainingPrograms-section {
+    background-color: #CCCCCC;
+    padding:80px;
+}
+.program-card {
+    background-color: #212020;
+    padding:20px;
+    width:100%;
+    height:380px;
+    border-radius:31px;
+}
+.S2C1R1{
+    display:flex;
+    justify-content:center;
+}
+.programg-title{
+    margin-top:10px;
+}
+.programg-title h1 {
+color: #FFFFFF;
+font-size: 30px;
+font-family: 'Bebas Neue', cursive;
+}
+.program-desc {
+  margin-top: 10px;
+}
+.program-desc h2 {
+color: #D2C5C5;
+font-size: 22px;
+font-family: Arimo, sans-serif;
+}
+.program-icon{
+    display:flex;
+    margin-top:10px;
+    justify-content:center;
+}
+.programg-title, .program-desc{
+    text-align: center;
+}
+.section-title{
+    display:flex;
+    justify-content:center;
+    width:100%;
+    padding:20px;
+  
+}
+.section-title h1 {
+        text-align: center;
+        color: #212020;
+        font-weight: bold;
+        font-size: 45px;
+        font-family: 'Bebas Neue', cursive;
+    }
+.section-title h1 span {
+        text-align: center;
+        color: #C54545;
+    }
+.program-card{
+    margin-top:10px;
+}
+.S1R2C1 {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+@media screen and (max-width: 1040px) {
+    .cal-img img {
+        display: none;
+    }
+
+    .calculater-sec {
+        justify-content: center;
+        display: flex;
+    }
+
+    .C1S1 {
+        width: 100% !important;
+        min-width: 100% !important;
+    }
+
+    .calorieCalc-section {
+        padding: 40px !important;
+    }
+}
+#formSec {
+    width: 100%;
+}
+.input {
+    background-color: #1a1a1b;
+    border-radius: 9px;
+    border-color: #737373;
+    color: white;
+    padding: 4px;
+    caret-color: #959393;
+    width: 50%;
+    font-family: Arimo, sans-serif;
+}
+.activiy-select {
+    background-color: #1a1a1b;
+    border-radius: 9px;
+    border-color: #737373;
+    color: white;
+    padding: 4px;
+    caret-color: #959393;
+    width: 100%;
+}
+.gender-chk span {
+    margin-right: 9px;
+    color: #bbb9b9;
+    margin-left: 9px;
+}
+.Gender {
+    width: 18px;
+}
+    .Gender:checked {
+        outline: none !important;
+        border: 1px solid white !important;
+        box-shadow: 0 0 0px none !important;
+    }
+.submit-form {
+    background-color: #db0f33 !important;
+    color: white !important;
+    border-radius: 11px !important;
+    width: 167px;
+    padding: 5px !important;
+    cursor: pointer;
+    border-color: #db0f33 !important;
+    margin-right: 10px;
+    font-family: Arimo, sans-serif;
+}
+.rest-from {
+    background-color: #c4c4c4 !important;
+    color: #1a1a1b !important;
+    border-radius: 11px !important;
+    width: 120px;
+    padding: 5px !important;
+    cursor: pointer;
+    margin-left: 10px;
+    font-family: Arimo, sans-serif;
+}
+.calorie-text {
+    padding-top: 11px;
+}
+.result h1{
+    text-align:center;
+    color:ghostwhite;
+}
+#result-text {
+    display: none;
+}
+.warning-text h2 {
+    color: #db0f33;
+    font-size: 12px;
+    text-align: center;
+    display: none;
+}
+.calorieCalc-section {
+    background-color: #212020;
+    padding: 125px;
+}
+.calculater-sec {
+    background-color: #111112;
+    padding: 35px;
+    border-radius: 15px;
+    width: 95%;
+}
+.calculater-sec form label {
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+text-align: center;
+max-width: 100%;
+line-height: 26px;
+margin-bottom: 20px;
+}
+.calculater-sec form label h1 {
+font-size: 22px;
+width: 88px !important;
+display: inline;
+padding-right: 10px;
+color: white;
+font-family: Arimo, sans-serif;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input::placeholder {
+    text-align: right;
+}
+
+.inputField input:focus {
+    outline: none !important;
+    border: 1px solid red;
+    box-shadow: 0 0 5px #db0f33;
+}
+.Gender {
+    width: 18px;
+}
+.activiy-select {
+    background-color: #1a1a1b;
+    border-radius: 9px;
+    border-color: #737373;
+    color: white;
+    padding: 4px;
+    caret-color: #959393;
+    width: 100%;
+    font-family: Arimo, sans-serif;
+}
+.page-title h1 {
+    font-size: 72px;
+    color: white;
+    margin-left: 35px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.page-title span {
+    color: #db0f33;
+}
+#calorie-text {
+    color: #b6b2b2;
+    font-size: 18px;
+    text-align: center;
+}
+.calorie-text {
+    padding-top: 11px;
+}
+
+#calorie-text {
+    display: none;
+}
+@media screen and (max-width: 500px) {
+    .cal-img img {
+        display: none;
+    }
+
+    .calculater-sec {
+        justify-content: center;
+        display: flex;
+    }
+
+    .C1S1 {
+        width: 100% !important;
+        min-width: 100% !important;
+    }
+
+    .sec1 {
+        padding: 10px !important;
+    }
+
+    #formSec {
+        width: 100%;
+    }
+}
+.cal-img img {
+    margin-top: 20px;
+    width: 90%;
+    max-width: 100%;
+    align-self: center;
+}
+.cal-img {
+    display: flex;
+    justify-content: center;
+}
+.S1R2C1 {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+.activiy-select:focus {
+    outline: none !important;
+    border: 1px solid red;
+    box-shadow: 0 0 5px #db0f33;
+}
+.ul-navBar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(0 0 0);
+    padding: 10px;
+}
+.ul-navBar li {
+    float:right;
+}
+.logo {
+    float: left !important;
+    display:flex;
+    justify-content:center;
+    align-content:center;
+}
+.ul-navBar li a {
+    display: block;
+    color: white !important;
+    text-align: center;
+    padding: 5px 16px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 5px;
+}
+    .ul-navBar :hover {
+    }
+.signUp-nav {
+    background-color:#C54545;
+    border-radius:10px;
+    width:90px;
+}
+.programsBasedOn-section {
+    background-color: #CCCCCC;
+    padding: 80px;
+}
+.sec3-title h1 {
+    text-align: center;
+    color: #212020;
+    font-weight: bold;
+    font-size: 45px;
+    font-family: 'Bebas Neue', cursive;
+}
+.levelName{
+    text-align:center;
+}
+    .levelName h3 {
+        font-family: Arimo, sans-serif;
+        font-weight: bold;
+        font-size: 31px;
+        font-family: 'Signika Negative', sans-serif;
+    }
+.sec3-title span {
+   text-align: center;
+   color: #C54545;
+ }
+.levelNumber {
+    background-image: url(/imgs/levelImg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10px;
+    filter: drop-shadow(1px 2px 5px #000000);
+    -webkit-filter: drop-shadow(1px 2px 5px #000000);
+    -moz-filter: drop-shadow(1px 2px 5px #000000);
+  
+}
+.levelNumber1 {
+    background-image: url(/imgs/levelImg2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10px;
+    filter: drop-shadow(1px 2px 5px #000000);
+    -webkit-filter: drop-shadow(1px 2px 5px #000000);
+    -moz-filter: drop-shadow(1px 2px 5px #000000);
+}
+    .levelNumber1 h1 {
+        text-align: center;
+        color: white;
+        font-family: 'Signika Negative', sans-serif;
+    }
+.levelNumber h1 {
+    text-align: center;
+    color: white;
+}
+.levelIcon{
+    display:flex;
+    justify-content:center;
+}
+.levelIcon img {
+  width: 150px;
+  filter: drop-shadow(1px 2px 5px #000000);
+  -webkit-filter: drop-shadow(1px 2px 5px #000000);
+  -moz-filter: drop-shadow(1px 2px 5px #000000);
+}
+.sec3-title{
+    padding:15px;
+}
+.S4R2{
+    margin-top:25px;
+}
+.level{
+    width:100%;
+}
+.footer {
+    padding: 80px;
+    background-color: #212020;
+}
+.contact{
+    width:100%;
+}
+.contact img {
+    margin:10px;
+}
+ .contact .text span {
+        color: #cbc5c5;
+   }
+.bar {
+    border-top: 1px solid #7D7D7D;
+    width: 100%;
+    margin-top:40px;
+}
+.fathImg{
+    margin-top:40px;
+}

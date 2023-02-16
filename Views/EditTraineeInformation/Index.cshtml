@@ -1,0 +1,65 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using get_fit.Areas.Identity.Data
+@model get_fit.Models.mainModel
+@inject UserManager<ApplicationUser> UserManager
+@{
+    Layout = "~/Views/AccountManagement/AccountManagement.cshtml";
+}
+@{
+}
+<div class="mainSection">
+    <div class="container-fluid">
+        <div class="row"> 
+              <div class="mainText">
+        <h1>Trainee information</h1>
+        </div>
+            </div>
+             <form method="post">
+       <div class="row">
+           <div class="col-lg-3 col-md-6 col-sm-6">
+               <div class="changebirthDayInput">
+            <h1>Change birthday</h1>
+            <input autocomplete="off" placeholder="@TempData["birthDayValue"]" asp-for="changeBirthday.newBirthDay" />
+        </div>
+           </div>
+              </div>
+       <div class="row">
+           <div class="col-lg-5 col-md-12 col-sm-12">
+               <div class="saveButton d-flex justify-content-end">
+                   <button  asp-action="ChangeBirthday" >Save</button>
+               </div>
+           </div>
+       </div>
+   <div class="row">
+           <div class="col-lg-3 col-md-6 col-sm-6">
+               <div class="changeHeightInput">
+            <h1>Change height</h1>
+            <input autocomplete="off" placeholder="@TempData["heightValue"]" asp-for="changeHeight.Height" />
+        </div>
+           </div>
+       </div>
+           <div class="row">
+           <div class="col-lg-5 col-md-12 col-sm-12">
+               <div class="saveButton d-flex justify-content-end">
+                   <button asp-action="ChangeHeight">Save</button>
+               </div>
+           </div>
+       </div>
+       <div class="row">
+           <div class="col-lg-3 col-md-6 col-sm-6">
+               <div class="changeWeightInput">
+            <h1>Change Weight</h1>
+            <input autocomplete="off" placeholder="@TempData["weightValue"]" asp-for="changeWeight.weight"  />
+        </div>
+           </div>
+       </div>
+           <div class="row">
+           <div class="col-lg-5 col-md-12 col-sm-12">
+               <div class="saveButton d-flex justify-content-end">
+                   <button asp-action="ChangeWeight" >Save</button>
+               </div>
+           </div>
+       </div>
+       </form>
+            </div>
+        </div>

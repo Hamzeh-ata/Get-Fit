@@ -1,0 +1,59 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using get_fit.Areas.Identity.Data
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+ @inject IUserStore<ApplicationUser> _userStore
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+      <link rel="stylesheet" href="~/css/AccountManagement.css" asp-append-version="true" />
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <div class="col-lg-2 col-md-6 col-sm-6 p-0 m-0">
+                     <aside>
+           <div class="userName">
+               <h1>@UserManager.GetUserAsync(User).Result.FirstName @UserManager.GetUserAsync(User).Result.LastName</h1>
+           </div>
+            <div class="userEmail">
+               <h1>@UserManager.GetUserAsync(User).Result.Email</h1>
+           </div>
+           <div class="menuBar">
+           <h1>Menu</h1>
+           </div>
+           <div class="bar"></div>
+           <a class="accountMangement" asp-action="Index" asp-controller="Management">
+           <div class="asideField">
+               <h1>Account mangement</h1>
+           </div>
+           </a>
+             <a class="personalInformation" asp-action="Index" asp-controller="EditTraineeInformation">
+           <div class="asideField">
+               <h1>Personal information</h1>
+           </div>
+           </a>
+         
+            <a class="workoutPreferences" asp-action="Index" asp-controller="editWorkoutPrefernces">
+           <div class="asideField">
+               <h1>Workout preferences</h1>
+           </div>
+           </a>
+        </aside>
+            </div>
+            <div class="col-lg-10 col-md-6 col-sm-6 p-0">
+                
+        @RenderBody()
+            </div>
+        </div>
+    </div>
+    
+    <div>
+
+    </div>
+</body>
+</html>

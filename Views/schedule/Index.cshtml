@@ -1,0 +1,835 @@
+﻿@model IEnumerable<get_fit.Models.workoutDeatils>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<header>   
+        <nav>
+            <ul class="ul-navBar">
+                    <li>
+    </li>
+
+    <li class="nav-item">
+       <form id="logoutForm" class="form-inline" action="/Identity/Account/Logout?returnUrl=%2F" method="post">
+            <button style="color:#C54545 !important" id="logout" type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8GXO9FHlg7hOiN7niqUx-FD3TtuddLSalHD7knoC7xh4pZtrnsYuw7l5ENCLCvRCyHorbaAaaaww88pP40M3r_xEam7cRZHzEJSfjXQ04J3PWhBLVihTeNzglF6L9uW4pPbXdzMYt5PAGWs9rXepNuvMbotMBgXTamL4q8vTxzWRr2aMLme1zfGaYGwHIC4kww"></form>
+    </li>
+              
+                <li>
+                    <a asp-controller="Home" asp-action="Index">
+                      Home
+                    </a>
+                    </li>
+            </ul>
+        </nav>
+   </header>
+
+   <div class="container">
+       <div class="row justify-content-center">
+           <div class="col-lg-6 col-sm-12 col-md-12 justify-content-center">
+               <div class="mainTitle">
+                   <h1>8 Week schedule to gain muscle mass  </h1>
+               </div>
+           </div>
+       </div>
+       <div class="row justify-content-center">
+           <div class="col-lg-7 col-sm-12 col-md-12">
+               <div class="WorkoutSummary">
+                      <div class="summaryTitle">
+                           <h1>Workout summary</h1>
+                       </div>
+                        <div class="lineOne">
+                              <div class="row">
+                       <div class="col-6">
+                           <div class="fieldOne">
+                               <h1>Main goal</h1>
+                           </div>
+                       </div>
+                       <div class="col-6">
+                           <div class="fieldTwo">
+                           <h1>@TempData["workoutGoal"]</h1>
+                           </div>
+                       </div>
+                   </div>
+                           </div>
+                        <div class="lineTwo">
+                              <div class="row">
+                       <div class="col-6">
+                           <div class="fieldOne">
+                               <h1>Workout level</h1>
+                           </div>
+                       </div>
+                       <div class="col-6">
+                           <div class="fieldTwo">
+                           <h1>@TempData["workoutLevel"]</h1>
+                           </div>
+                       </div>
+                   </div>
+                           </div>
+                        <div class="lineTwo">
+                              <div class="row">
+                       <div class="col-6">
+                           <div class="fieldOne">
+                               <h1>Workout place</h1>
+                           </div>
+                       </div>
+                       <div class="col-6">
+                           <div class="fieldTwo">
+                           <h1>@TempData["workoutPlace"]</h1>
+                           </div>
+                       </div>
+                   </div>
+                           </div>
+                           <div class="lineFour">
+                              <div class="row">
+                       <div class="col-6">
+                           <div class="fieldOne">
+                               <h1>Workout days per week</h1>
+                           </div>
+                       </div>
+                       <div class="col-6">
+                           <div class="fieldTwo">
+                           <h1> @TempData["workoutDay"]</h1>
+
+                           </div>
+                       </div>
+                   </div>
+                           </div>
+                        <div class="lineFive">
+                              <div class="row">
+                       <div class="col-6">
+                           <div class="fieldOne">
+                               <h1>Workout hours required</h1>
+                           </div>
+                       </div>
+                       <div class="col-6">
+                           <div class="fieldTwo">
+                           <h1>@TempData["workoutTime"]</h1>
+
+                           </div>
+                       </div>
+                   </div>
+                           </div>
+           </div>
+       </div>
+   </div>
+    @{
+        if (@TempData["workoutGoal"].ToString() == "bulking")
+        {
+                  <div class="row justify-content-center">
+          <div class="col-lg-8 col-sm-12 col-md-12">
+           <div class="workoutDescription">
+               <h1> Workout Description</h1>
+               <p>Summer is in the past, and people are now looking to gain some mass – healthy mass that is. After dedicating months to getting leaner and looking better, you might be ready to devote some time to heavier weights and filling out some of those t-shirts and hoodies. If that reads like I’m talking about you, then keep reading because we have the plan right here.</p>
+    </div>
+           </div>
+    </div>
+     <div class="row justify-content-center">
+          <div class="col-lg-8 col-sm-12 col-md-12">
+           <div class="workoutDescription">
+               <h1> Workout Days</h1>
+               <p>We will give you just a suggestion you can train in any days you want</p>
+               <ul class="workoutDays">
+                   <li>Monday – Chest and Bicep</li>
+                   <li>Tuesday – Upper Back and Rear Delts</li>
+                   <li>Wednesday – Off</li>                   <li>Friday – Legs</li>                    <li>Saturday and Sunday – Off</li>
+
+               </ul>
+    </div>
+           </div>
+    </div>
+     <div class="row justify-content-center">
+          <div class="col-lg-8 col-sm-12 col-md-12">
+           <div class="workoutDescription">
+               <h1>Workout 1: Chest and Bicep</h1>
+               <table>
+                   <tr class="tableRowOne">
+                       <th>Exercise</th>
+                       <th>Sets</th>
+                       <th>Reps</th>
+                       <th>Video Link</th>
+                   </tr>
+
+                 @foreach(var item in Model){
+             if (item.bodyPart=="Chest")
+              {
+                      <tr>
+                       <td>@item.exerciseName</td>
+                         <td>@item.sets</td>
+                          <td>@item.reps</td>
+                         <td class="d-flex justify-content-center"><a href="@item.videoLink"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-video" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#C54545" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M15 10l4.553 -2.276a1 1 0 0 1 1.447 .894v6.764a1 1 0 0 1 -1.447 .894l-4.553 -2.276v-4z" />
+  <rect x="3" y="6" width="12" height="12" rx="2" />
+</svg></a>
+                         
+                         
+                         </td>
+                         </tr>
+                         }
+                    }   
+                                       @{
+                        int i = 0;
+                        }
+                        @foreach(var item in Model){
+                        if (item.bodyPart=="Bicep" && i <3 )
+              {
+                            i++;
+                                <tr>
+                       <td>@item.exerciseName </td>
+                         <td>@item.sets </td>
+                          <td>@item.reps</td>
+                                             <td class="d-flex justify-content-center"><a href="@item.videoLink"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-video" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#C54545" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M15 10l4.553 -2.276a1 1 0 0 1 1.447 .894v6.764a1 1 0 0 1 -1.447 .894l-4.553 -2.276v-4z" />
+  <rect x="3" y="6" width="12" height="12" rx="2" />
+</svg></a> </td>
+                                </tr>
+                        }
+                    }
+               </table>
+    </div>
+           </div>
+    </div>
+     <div class="row justify-content-center">
+          <div class="col-lg-8 col-sm-12 col-md-12">
+           <div class="workoutDescription">
+               <h1>Workout 2: Back and Tricep</h1>
+               <table>
+                   <tr class="tableRowOne">
+                       <th>Exercise</th>
+                       <th>Sets</th>
+                       <th>Reps</th>
+                       <th>Video Link</th>
+                   </tr>
+
+                 @foreach(var item in Model){
+             if (item.bodyPart=="Back")
+              {
+                      <tr>
+                       <td>@item.exerciseName</td>
+                         <td>@item.sets</td>
+                          <td>@item.reps</td>
+                                      <td class="d-flex justify-content-center"><a href="@item.videoLink"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-video" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#C54545" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M15 10l4.553 -2.276a1 1 0 0 1 1.447 .894v6.764a1 1 0 0 1 -1.447 .894l-4.553 -2.276v-4z" />
+  <rect x="3" y="6" width="12" height="12" rx="2" />
+</svg></a> </td>                         </tr>
+                         }
+                    }   
+                        @{
+                        int counter = 0;
+                        }
+                        @foreach(var item in Model){
+                 if (item.bodyPart=="Tricep " && counter <3)
+              {
+                            counter++;
+                                <tr>
+                       <td>@item.exerciseName </td>
+                         <td>@item.sets </td>
+                          <td>@item.reps</td>
+                                      <td class="d-flex justify-content-center"><a href="@item.videoLink"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-video" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#C54545" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M15 10l4.553 -2.276a1 1 0 0 1 1.447 .894v6.764a1 1 0 0 1 -1.447 .894l-4.553 -2.276v-4z" />
+  <rect x="3" y="6" width="12" height="12" rx="2" />
+</svg></a> </td>                                </tr>
+                        }
+                    }
+               </table>
+    </div>
+           </div>
+    </div>
+     <div class="row justify-content-center">
+          <div class="col-lg-8 col-sm-12 col-md-12">
+           <div class="workoutDescription">
+               <h1>Workout 3: Shoulders and Legs</h1>
+               <table>
+                   <tr class="tableRowOne">
+                       <th>Exercise</th>
+                       <th>Sets</th>
+                       <th>Reps</th>
+                       <th>Video Link</th>
+                   </tr>
+
+                 @foreach(var item in Model){
+             if (item.bodyPart=="Shoulder")
+              {
+                      <tr>
+                       <td>@item.exerciseName</td>
+                         <td>@item.sets</td>
+                          <td>@item.reps</td>
+                                      <td class="d-flex justify-content-center"><a href="@item.videoLink"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-video" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#C54545" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M15 10l4.553 -2.276a1 1 0 0 1 1.447 .894v6.764a1 1 0 0 1 -1.447 .894l-4.553 -2.276v-4z" />
+  <rect x="3" y="6" width="12" height="12" rx="2" />
+</svg></a> </td>                         </tr>
+                         }
+                    }   
+                     
+                        @foreach(var item in Model){
+                 if (item.bodyPart=="Legs" )
+              {
+                                <tr>
+                       <td>@item.exerciseName </td>
+                         <td>@item.sets </td>
+                          <td>@item.reps</td>
+                                      <td class="d-flex justify-content-center"><a href="@item.videoLink"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-video" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#C54545" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M15 10l4.553 -2.276a1 1 0 0 1 1.447 .894v6.764a1 1 0 0 1 -1.447 .894l-4.553 -2.276v-4z" />
+  <rect x="3" y="6" width="12" height="12" rx="2" />
+</svg></a> </td>                                </tr>
+                        }
+                    }
+               </table>
+           
+    </div>
+           </div>
+    </div> 
+        }
+}
+    @{
+      else if (@TempData["workoutGoal"].ToString() == "cutting")
+        {
+                  <div class="row justify-content-center">
+          <div class="col-lg-8 col-sm-12 col-md-12">
+           <div class="workoutDescription">
+               <h1> Workout Description</h1>
+               <p>A cutting diet is usually used by bodybuilders and fitness enthusiasts to cut body fat while maintaining muscle mass.
+
+    The key distinctions with other weight loss diets are that a cutting diet is catered to each individual, tends to be higher in protein and carbs, and should be accompanied by weightlifting.</p>
+    </div>
+           </div>
+    </div>
+     <div class="row justify-content-center">
+          <div class="col-lg-8 col-sm-12 col-md-12">
+           <div class="workoutDescription">
+               <h1> Workout Days</h1>
+               <p>We will give you just a suggestion you can train in any days you want</p>
+               <ul class="workoutDays">
+                   <li>Monday – Chest and Bicep</li>
+                   <li>Tuesday – Back and Tricep</li>
+                   <li>Wednesday – Shoulder</li>                   <li>Friday – Legs</li>                    <li>Saturday and Sunday – Off</li>
+
+               </ul>
+    </div>
+           </div>
+    </div>
+     <div class="row justify-content-center">
+          <div class="col-lg-8 col-sm-12 col-md-12">
+           <div class="workoutDescription">
+               <h1>Workout 1: Chest and Bicep</h1>
+               <table>
+                   <tr class="tableRowOne">
+                       <th>Exercise</th>
+                       <th>Sets</th>
+                       <th>Reps</th>
+                       <th>Video Link</th>
+                   </tr>
+
+                 @foreach(var item in Model){
+             if (item.bodyPart=="Chest")
+              {
+                      <tr>
+                       <td>@item.exerciseName</td>
+                         <td>@item.sets</td>
+                          <td>@item.reps</td>
+                                      <td class="d-flex justify-content-center"><a href="@item.videoLink"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-video" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#C54545" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M15 10l4.553 -2.276a1 1 0 0 1 1.447 .894v6.764a1 1 0 0 1 -1.447 .894l-4.553 -2.276v-4z" />
+  <rect x="3" y="6" width="12" height="12" rx="2" />
+</svg></a> </td>                         </tr>
+                         }
+                    }   
+                                       @{
+                        int i = 0;
+                        }
+                        @foreach(var item in Model){
+                        if (item.bodyPart=="Bicep" && i <3 )
+              {
+                            i++;
+                                <tr>
+                       <td>@item.exerciseName </td>
+                         <td>@item.sets </td>
+                          <td>@item.reps</td>
+                                      <td class="d-flex justify-content-center"><a href="@item.videoLink"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-video" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#C54545" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M15 10l4.553 -2.276a1 1 0 0 1 1.447 .894v6.764a1 1 0 0 1 -1.447 .894l-4.553 -2.276v-4z" />
+  <rect x="3" y="6" width="12" height="12" rx="2" />
+</svg></a> </td>                                </tr>
+                        }
+                    }
+               </table>
+    </div>
+           </div>
+    </div>
+     <div class="row justify-content-center">
+          <div class="col-lg-8 col-sm-12 col-md-12">
+           <div class="workoutDescription">
+               <h1>Workout 2: Back and Tricep</h1>
+               <table>
+                   <tr class="tableRowOne">
+                       <th>Exercise</th>
+                       <th>Sets</th>
+                       <th>Reps</th>
+                       <th>Video Link</th>
+                   </tr>
+
+                 @foreach(var item in Model){
+             if (item.bodyPart=="Back")
+              {
+                      <tr>
+                       <td>@item.exerciseName</td>
+                         <td>@item.sets</td>
+                          <td>@item.reps</td>
+                         <td>@item.videoLink</td>
+                         </tr>
+                         }
+                    }   
+                        @{
+                        int counter = 0;
+                        }
+                        @foreach(var item in Model){
+                 if (item.bodyPart=="Tricep " && counter <3)
+              {
+                            counter++;
+                                <tr>
+                       <td>@item.exerciseName </td>
+                         <td>@item.sets </td>
+                          <td>@item.reps</td>
+                                      <td class="d-flex justify-content-center"><a href="@item.videoLink"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-video" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#C54545" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M15 10l4.553 -2.276a1 1 0 0 1 1.447 .894v6.764a1 1 0 0 1 -1.447 .894l-4.553 -2.276v-4z" />
+  <rect x="3" y="6" width="12" height="12" rx="2" />
+</svg></a> </td>                                </tr>
+                        }
+                    }
+               </table>
+    </div>
+           </div>
+    </div>
+     <div class="row justify-content-center">
+          <div class="col-lg-8 col-sm-12 col-md-12">
+           <div class="workoutDescription">
+               <h1>Workout 3: Shoulders</h1>
+               <table>
+                   <tr class="tableRowOne">
+                       <th>Exercise</th>
+                       <th>Sets</th>
+                       <th>Reps</th>
+                       <th>Video Link</th>
+                   </tr>
+
+                 @foreach(var item in Model){
+             if (item.bodyPart=="Shoulder")
+              {
+                      <tr>
+                       <td>@item.exerciseName</td>
+                         <td>@item.sets</td>
+                          <td>@item.reps</td>
+                                      <td class="d-flex justify-content-center"><a href="@item.videoLink"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-video" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#C54545" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M15 10l4.553 -2.276a1 1 0 0 1 1.447 .894v6.764a1 1 0 0 1 -1.447 .894l-4.553 -2.276v-4z" />
+  <rect x="3" y="6" width="12" height="12" rx="2" />
+</svg></a> </td>                         </tr>
+                         }
+                    }   
+               </table>
+    </div>
+           </div>
+    </div> 
+     <div class="row justify-content-center">
+          <div class="col-lg-8 col-sm-12 col-md-12">
+           <div class="workoutDescription">
+               <h1>Workout 4: Legs</h1>
+               <table>
+                   <tr class="tableRowOne">
+                       <th>Exercise</th>
+                       <th>Sets</th>
+                       <th>Reps</th>
+                       <th>Video Link</th>
+                   </tr>
+
+                        @foreach(var item in Model){
+                 if (item.bodyPart=="Legs" )
+              {
+                                <tr>
+                       <td>@item.exerciseName </td>
+                         <td>@item.sets </td>
+                          <td>@item.reps</td>
+                                      <td class="d-flex justify-content-center"><a href="@item.videoLink"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-video" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#C54545" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M15 10l4.553 -2.276a1 1 0 0 1 1.447 .894v6.764a1 1 0 0 1 -1.447 .894l-4.553 -2.276v-4z" />
+  <rect x="3" y="6" width="12" height="12" rx="2" />
+</svg></a> </td>                                </tr>
+                        }
+                    }
+               </table>
+           
+    </div>
+           </div>
+    </div>
+        }
+}
+    @{
+        else if (@TempData["workoutGoal"].ToString() == "loseWeight")
+        {
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-sm-12 col-md-12">
+                    <div class="workoutDescription">
+                        <h1> Workout Description</h1>
+                        <p>Weight loss, in the context of medicine, health, or physical fitness, refers to a reduction of the total body mass, by a mean loss of fluid, body fat (adipose tissue), or lean mass (namely bone mineral deposits, muscle, tendon, and other connective tissue).</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-sm-12 col-md-12">
+                    <div class="workoutDescription">
+                        <h1> Workout Days</h1>
+                        <p>We will give you just a suggestion you can train in any days you want</p>
+                        <ul class="workoutDays">
+                            <li>Monday – push</li>
+                            <li>Tuesday – pull</li>
+                            <li>Wednesday – Legs</li>                            <li>Friday – </li>                            <li>Saturday and Sunday – Off</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-sm-12 col-md-12">
+                    <div class="workoutDescription">
+                        <h1>Workout 1: Push</h1>
+                        <table>
+                            <tr class="tableRowOne">
+                                <th>Exercise</th>
+                                <th>Sets</th>
+                                <th>Reps</th>
+                                <th>Video Link</th>
+                            </tr>
+                            @{
+                                int CCounter = 0;
+                            }
+                            @foreach(var item in Model){
+
+             if (item.bodyPart=="Chest" && CCounter < 5)
+              {
+                                    CCounter++;
+                                    <tr>
+                       <td>@item.exerciseName</td>
+                         <td>@item.sets</td>
+                          <td>@item.reps</td>
+                         <td>@item.videoLink</td>
+                         </tr>
+                         }
+                    }   
+                                       @{
+                        int i = 0;
+                        }
+                        @foreach(var item in Model){
+                        if (item.bodyPart=="Bicep" && i <3 )
+              {
+                            i++;
+                                <tr>
+                       <td>@item.exerciseName </td>
+                         <td>@item.sets </td>
+                          <td>@item.reps</td>
+                         <td>@item.videoLink</td>
+                                </tr>
+                        }
+                    }
+               </table>
+    </div>
+           </div>
+    </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-sm-12 col-md-12">
+                    <div class="workoutDescription">
+                        <h1>Workout 2: Pull</h1>
+                        <table>
+                            <tr class="tableRowOne">
+                                <th>Exercise</th>
+                                <th>Sets</th>
+                                <th>Reps</th>
+                                <th>Video Link</th>
+                            </tr>
+                            @{
+                                int BCounter = 0;
+                            }
+                            @foreach(var item in Model){
+             if (item.bodyPart=="Back" && BCounter < 4)
+              {
+                      BCounter++;
+                                    <tr>
+                       <td>@item.exerciseName</td>
+                         <td>@item.sets</td>
+                          <td>@item.reps</td>
+                         <td>@item.videoLink</td>
+                         </tr>
+                         }
+                    }   
+                        @{
+                        int Tcounter = 0;
+                        }
+                        @foreach(var item in Model){
+                 if (item.bodyPart=="Tricep " && Tcounter <3)
+              {
+                            Tcounter++;
+                                <tr>
+                       <td>@item.exerciseName </td>
+                         <td>@item.sets </td>
+                          <td>@item.reps</td>
+                         <td>@item.videoLink</td>
+                                </tr>
+                        }
+                    }
+                       @{
+                        int Scounter = 0;
+                        }
+                        @foreach(var item in Model){
+                 if (item.bodyPart=="Shoulder " && Tcounter <3)
+              {
+                            Scounter++;
+                                <tr>
+                       <td>@item.exerciseName </td>
+                         <td>@item.sets </td>
+                          <td>@item.reps</td>
+                         <td>@item.videoLink</td>
+                                </tr>
+                        }
+                    }
+
+               </table>
+    </div>
+           </div>
+    </div>
+    
+     <div class="row justify-content-center">
+          <div class="col-lg-8 col-sm-12 col-md-12">
+           <div class="workoutDescription">
+               <h1>Workout 3: Legs</h1>
+               <table>
+                   <tr class="tableRowOne">
+                       <th>Exercise</th>
+                       <th>Sets</th>
+                       <th>Reps</th>
+                       <th>Video Link</th>
+                   </tr>
+
+                        @foreach(var item in Model){
+                 if (item.bodyPart=="Legs" )
+              {
+                                <tr>
+                       <td>@item.exerciseName </td>
+                         <td>@item.sets </td>
+                          <td>@item.reps</td>
+                         <td>@item.videoLink</td>
+                                </tr>
+                        }
+                    }
+               </table>
+           
+    </div>
+           </div>
+    </div>
+    
+
+        }
+}
+   </div>
+    <section class="footer">
+     <div class="container-fluid">
+         <div class="row justify-content-center ">
+          <div class="col-lg-2 col-md-12 col-sm-12 align-self-center justify-content-center">
+              <div class="contact d-flex justify-content-center">
+                 <div class="wrap">
+                     <div class="img d-flex justify-content-center">
+                     <img src="~/imgs/phoneIcon.png"/>
+                     </div>
+                     <div class="text text-center">
+                         <span>0798354093</span>
+                     </div>
+                       </div>
+                    
+                 </div>
+             </div>
+             <div class="col-lg-2 col-md-12 col-sm-12 align-self-center justify-content-center">
+                  <div class="contact d-flex justify-content-center">
+                          <div class="wrap">
+                          <div class="img d-flex justify-content-center ">
+                     <img  src="~/imgs/emailIcon.png"/>
+                     </div>
+                     <div class="text text-center">
+                         <span>hamzehiyi@outlook.com</span>
+                     </div>
+                       </div>
+                 </div>
+             </div>
+             <div class="col-lg-2  col-md-12 col-sm-12 align-self-center justify-content-center">
+                  <div class="contact d-flex justify-content-center">
+                          <div class="wrap">
+                          <div class="img d-flex justify-content-center">
+                     <img  src="~/imgs/locationIcon.png"/>
+                     </div>
+                     <div class="text text-center">
+                         <span>Amman Jordan</span>
+                     </div>
+                       </div>
+                 </div>
+             </div>
+         </div>
+         <div class="bar"> </div>
+        <div class="row justify-content-center">
+            <div class="col-3 justify-content-center">
+                <div class="fathImg w-100 d-flex justify-content-center">
+                  <img src="./imgs/fath_splash.png" />
+
+                </div>
+            </div>
+        </div>             
+     </div>
+     </section>
+<style>
+    .lineOne,.lineTwo,.lineTwo,.lineFour{
+border-bottom: 1px solid #302F2F;
+padding:5px;
+    }
+    .summaryTitle {
+        margin-bottom:15px;
+        padding:5px;
+        margin-top:15px;
+    }
+    .summaryTitle h1{
+        color:white;
+        font-size:18px;
+        margin:0px !important;
+    }
+    .ul-navBar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333131;
+    padding: 10px;
+}
+.fieldOne h1{
+    color:white;
+    font-size:18px;
+    text-align:center;
+    font-weight:100;
+            padding:10px;
+
+}
+.fieldTwo h1{
+    color:#C54545;
+    font-size:18px;
+        font-weight:100;
+        padding:10px;
+}
+.ul-navBar li {
+    float: right;
+}
+.row{
+    margin:0px !important;
+}
+.ul-navBar li a {
+    display: block;
+    color: white !important;
+    text-align: center;
+    padding: 5px 16px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 5px;
+
+}
+
+body {
+height:100%;
+background-color:#212020 !important;
+
+}
+.mainTitle h1{
+    font-size:45px;
+    color:white;
+    font-weight:bold;
+    text-align:center;
+    margin-top:60px;
+   
+}
+.WorkoutSummary{
+    width:100%;
+    border-top:1px solid #C54545;
+    padding:15px;
+    margin-top:25px; 
+    background-color:#252525;
+
+}
+.workoutDescription{
+    margin-top:70px;
+}
+.workoutDescription h1{
+    color:white;
+    font-size:30px;
+}
+.workoutDescription p{
+    color:#aba8a8;
+    font-size:15px;
+    margin-top:25px;
+}
+.workoutDays li::before {
+      content:'\2022';
+    font-family: FontAwesome;
+    color: red; /* or whatever color you prefer */
+    margin-right: 14px;
+
+}
+  .workoutDays {list-style: none}
+ .workoutDays li{
+      color:white;
+  }
+  table{
+      width:100%;
+      margin-top:20px;
+      margin-bottom:20px;
+  }
+  .tableRowOne{
+      background-color:#C54545;
+  }
+  .tableRowOne th{
+      font-size:18px;
+      color:white;
+            padding:10px;
+
+  }
+  tr{
+ background-color:#313030;
+  }
+  .footer {
+    padding: 80px;
+    background-color: #262626;
+}
+.contact{
+    width:100%;
+}
+.contact img {
+    margin:10px;
+}
+ .contact .text span {
+        color: #cbc5c5;
+   }
+.bar {
+    border-top: 1px solid #7D7D7D;
+    width: 100%;
+    margin-top:40px;
+}
+.fathImg{
+    margin-top:40px;
+}
+  tr td{
+ padding:10px;
+ color:white;
+  }
+  tr:nth-child(even) {
+  background-color: #292929;
+}
+</style>
